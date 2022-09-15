@@ -59,9 +59,12 @@ $phones = [
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mobile Phone | Orange Jordan E shop</title>
+    <link rel="stylesheet" href="css\style.css">
     <!-- Copyright © 2014 Monotype Imaging Inc. All rights reserved -->
 <link href="https://cdn.jsdelivr.net/npm/boosted@5.1.3/dist/css/orange-helvetica.min.css" rel="stylesheet" integrity="sha384-ARRzqgHDBP0PQzxQoJtvyNn7Q8QQYr0XT+RXUFEPkQqkTB6gi43ZiL035dKWdkZe" crossorigin="anonymous">
 <link href="https://cdn.jsdelivr.net/npm/boosted@5.1.3/dist/css/boosted.min.css" rel="stylesheet" integrity="sha384-Di/KMIVcO9Z2MJO3EsrZebWTNrgJTrzEDwAplhM5XnCFQ1aDhRNWrp6CWvVcn00c" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -101,7 +104,56 @@ $phones = [
       </form>
     </div>
   </div>
+  
 </nav>
+<div class="container">
+<div class="row row-cols-1 row-cols-md-3 g-4">
+  <?php for ($i=0; $i < count($phones); $i++){
+  ?>
+  
+  <div class="col">
+    <div class="card-h-100" >
+      <img src="<?php echo $phones[$i]["img_url"];?>"  class="card-img-top" height=300vh width=250vw alt="...">
+      <div class="card-body">
+        <brandName><?php echo $phones[$i]['brand'];?></brandName>
+        <h5 class="card-title"><?php echo $phones[$i]['name'];?></h5>
+        <div class="rating"> <?php for ($x=0;$x<5;$x++){
+  if($x<$phones[$i]['rate']){
+   echo '<span class="fa fa-star checked"></span>';
+  } else{
+    echo '<span class="fa fa-star"></span>';
+  }
+  
+
+}?>
+<br>
+<a href="">View Details <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" width="1vw"><!--! Font Awesome Pro 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg>
+</a></div>
+<hr>
+<div class="bottom-text">
+  <div class="Price"> <h1><?php echo $phones[$i]['price']?></h1></div>
+  <div class="text"> 
+  <button type="button" class="btn btn-primary btn-lg">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Pro 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M24 0C10.7 0 0 10.7 0 24S10.7 48 24 48H76.1l60.3 316.5c2.2 11.3 12.1 19.5 23.6 19.5H488c13.3 0 24-10.7 24-24s-10.7-24-24-24H179.9l-9.1-48h317c14.3 0 26.9-9.5 30.8-23.3l54-192C578.3 52.3 563 32 541.8 32H122l-2.4-12.5C117.4 8.2 107.5 0 96 0H24zM176 512c26.5 0 48-21.5 48-48s-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48zm336-48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48z"/></svg>
+
+  
+  Buy Now
+</button>
+
+  </div>
+  <div class="svgCart">
+    
+  </div>
+
+</div>
+      </div>
+    </div>
+  </div>
+ <?php }
+ ?>
+  </div>
+ 
+</div>
 <script src="https://cdn.jsdelivr.net/npm/boosted@5.1.3/dist/js/boosted.bundle.min.js" integrity="sha384-5thbp4uNEqKgkl5m+rMBhqR+ZCs+3iAaLIghPWAgOv0VKvzGlYKR408MMbmCjmZF" crossorigin="anonymous"></script>
 </body>
 </html>
